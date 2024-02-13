@@ -2,7 +2,6 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 canvas.setAttribute('width', 520);
 canvas.setAttribute('height', 400);
-canvas.offsetTop = 200;
 
 const ballRadius = 10;
 var current_eX;
