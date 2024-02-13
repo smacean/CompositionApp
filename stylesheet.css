@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+canvas {
+    background: #ffffff;
+    display: block;
+    margin: 0 auto;
+}
+
+/*
+.wrapper{
+    
+    width: 100%;
+    height: 100%;
+}
+*/
+
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    margin: 2px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #333;
+    background-image: linear-gradient(to top left,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2) 30%,
+            rgba(0, 0, 0, 0));
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+    background-color: rgba(0, 100, 0, 1);
+}
+
+.styled:active {
+    box-shadow:
+        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.right {
+    float: right;
+}
+
+.inline-block p {
+    display: inline-block;
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    background-color: #333;
+    /* メニューの背景色 */
+    color: #fff;
+    /* メニューテキストの色 */
+}
+
+.menu-list {
+    display: flex;
+    justify-content: center;
+    /* メニューアイテムを中央揃えに */
+}
+
+.menu-item {
+    border-left: 1px solid #fff;
+    /* メニューアイテムの左ボーダー */
+    position: relative;
+}
+
+.menu-item:last-child {
+    border-right: 1px solid #fff;
+    /* 最後のメニューアイテムの右ボーダー */
+}
+
+/* メニューアイテムのホバースタイル */
+.menu-item:hover .drop-menu-list {
+    opacity: 1;
+    /* 不透明度を最大に */
+    transition: opacity .3s, visibility .3s;
+    /* アニメーション設定 */
+    visibility: visible;
+    /* 下層メニューを表示 */
+}
+
+.menu-item a {
+    align-items: center;
+    color: #fff;
+    /* メニューアイテム内のリンクテキストの色 */
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    text-decoration: none;
+    /* リンクの下線を非表示 */
+    width: 120px;
+}
+
+/* ドロップダウンメニュー */
+.drop-menu {
+    position: relative;
+}
+
+.drop-menu-list {
+    background-color: #696969;
+    /* ドロップダウンメニューの背景色 */
+    left: 0;
+    opacity: 0;
+    /* 不透明度を最小に */
+    position: absolute;
+    top: 100%;
+    transition: opacity .3s, visibility .3s;
+    /* アニメーション設定 */
+    visibility: hidden;
+    /* 下層メニューを非表示 */
+    width: max-content;
+    z-index: 1;
+}
