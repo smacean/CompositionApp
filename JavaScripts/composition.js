@@ -26,9 +26,10 @@ document.addEventListener("mousedown", mouseDownHandler, false);
 document.addEventListener("click", clickHandler, false);
 
 function clickHandler(e) {
+    const rect = e.target.getBoundingClientRect();
     var count = 0;
     for (var i = 0; i < N; i++) {
-        var dist = (e.clientX - canvas.offsetLeft - members[scene_n][i][0]) ** 2 + (e.clientY - canvas.offsetTop - members[scene_n][i][1]) ** 2;
+        var dist = (e.clientX - rect.left - members[scene_n][i][0]) ** 2 + (e.clientY - rect.top - members[scene_n][i][1]) ** 2;
         if (members[scene_n][i][2] == 2) {
             members[scene_n][i][2] = 1;
         }
@@ -47,8 +48,9 @@ function clickHandler(e) {
     }
 }
 function mouseDownHandler(e) {
+    const rect = e.target.getBoundingClientRect();
     for (var i = 0; i < N; i++) {
-        var dist = (e.clientX - canvas.offsetLeft - members[scene_n][i][0]) ** 2 + (e.clientY - canvas.offsetTop - members[scene_n][i][1]) ** 2;
+        var dist = (e.clientX - rect.left - members[scene_n][i][0]) ** 2 + (e.clientY - rect.top - members[scene_n][i][1]) ** 2;
         if (members[scene_n][i][2] == 0 && dist < ballRadius ** 2) {
             members[scene_n][i][2] = 2;
             current_eX = e.clientX;
