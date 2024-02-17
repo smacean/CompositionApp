@@ -3,19 +3,23 @@
     margin: 0;
 }
 
+
 canvas {
     background: #ffffff;
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
-/*
-.wrapper{
-    
-    width: 100%;
-    height: 100%;
+/* 
+.Main-Canvas {
+    margin: 20px auto;
+} */
+
+
+header {
+    height: 50px;
 }
-*/
+
 
 .styled {
     border: 0;
