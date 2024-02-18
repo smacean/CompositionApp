@@ -13,13 +13,13 @@ var y = canvas.height / 2;
 var members = [[]]
 const n_element = 4; //メンバーの要素数（x, y, state, count,[r,g,b]）
 
-const scatt_dist = 5;
-const bami = scatt_dist * 4;
-var N = 0;
-var scene_s = 0;
-var scene_n = 0;
+const scatt_dist = 5; //メンバーを配置する細かさ（px）
+const bami = scatt_dist * 4; //バミリ, 定数を変更してバミリの何分の一で表示できるか変更可能
+var N = 0; //メンバーの人数
+var scene_s = 0; //シーンの総数
+var scene_n = 0; //現在表示しているシーン
 var state = 0; //0=固定　1=選択　2=移動　3=選択状態のものの上でマウスが押された状態
-var UpDown = "Up";
+var UpDown = "Up"; //"Up" or "Down", ステージ前方がどちらか
 
 document.addEventListener("mousemove", mouseMoveHandler, false);
 document.addEventListener("mousedown", mouseDownHandler, false);
@@ -175,7 +175,7 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-function OB_MemberPlus() {
+function InsertMember() {
     var r = Math.floor(Math.random() * 256);
     var g = Math.floor(Math.random() * 256);
     var b = Math.floor(Math.random() * 256);
@@ -188,27 +188,28 @@ function OB_MemberPlus() {
     N++;
 }
 
-function OB_MemberDelete() {
+function DeleteMember() {
 
     for (var i = 0; i < N; i++) {
         if (members[scene_n][i][2] == 2) {
-            for (var j = 0; j < N; j++) {
+            for (var j = 0; j <= scene_s; j++) {
                 members[j].splice(i, 1);
             }
+            i--;
             N--;
         }
     }
 }
 
-function OB_SceneNext() {
+function SceneNext() {
     if (scene_n < scene_s) scene_n++;
 }
 
-function OB_ScenePre() {
+function ScenePre() {
     if (scene_n > 0) scene_n--;
 }
 
-function OB_DeleteScene() {
+function DeleteScene() {
     if (scene_s > 0) {
         members.splice(scene_n, 1);
         scene_n--;
@@ -216,7 +217,7 @@ function OB_DeleteScene() {
     }
 }
 
-function OB_InsertScene() {
+function InsertScene() {
     scene_s++;
     members.splice(scene_n + 1, 0, []);
     for (var i = 0; i < N; i++) {
@@ -231,7 +232,7 @@ function OB_InsertScene() {
     scene_n++;
 }
 
-function OB_ChangeUpDown() {
+function ChangeUpDown() {
     for (var i = 0; i <= scene_s; i++) {
         for (var j = 0; j < N; j++) {
             members[i][j][0] = canvas.width - members[i][j][0];
