@@ -54,17 +54,17 @@
 
     <div class="inline-block">
         <a>シーンの切り替え</a>
-        <p><input class="changeScene styled" value="←" type="button" onclick="OB_ScenePre();" /></p>
-        <p><input class="changeScene styled" value="→" type="button" onclick="OB_SceneNext();" /></p>
-        <p class="right"><input class="styled" value="Change UpDown" type="button" onclick="OB_ChangeUpDown();" /></p>
+        <p><input class="changeScene styled" value="←" type="button" onclick="ScenePre();" /></p>
+        <p><input class="changeScene styled" value="→" type="button" onclick="SceneNext();" /></p>
+        <p class="right"><input class="styled" value="Change UpDown" type="button" onclick="ChangeUpDown();" /></p>
     </div>
     <p>
-        <input class="member styled" value="Member+" type="button" onclick="OB_MemberPlus();" />
-        <input class="member styled" value="Member-" type="button" onclick="OB_MemberDelete();" />
+        <input class="member styled" value="Member+" type="button" onclick="InsertMember();" />
+        <input class="member styled" value="Member-" type="button" onclick="DeleteMember();" />
     </p>
     <p>
-        <input class="numberScene styled" value="Insert scene" type="button" onclick="OB_InsertScene();" />
-        <input class="numberScene styled" value="Delete scene" type="button" onclick="OB_DeleteScene();" />
+        <input class="numberScene styled" value="Insert scene" type="button" onclick="InsertScene();" />
+        <input class="numberScene styled" value="Delete scene" type="button" onclick="DeleteScene();" />
     </p>
 
     <script src="JavaScripts/composition.js"></script>
